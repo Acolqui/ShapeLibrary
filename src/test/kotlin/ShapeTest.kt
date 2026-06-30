@@ -117,26 +117,42 @@ class ShapeTest {
     @Test
     fun `Test Square Class Methods`() {
         val pointOne = Point(1.0, 2.0)
-        val square = Square(pointOne)
-        val pointTwo = square.GetPointTwo()
+        val sideLength = 3.0
+        val square = Square(pointOne, sideLength)
 
-        // Test the points of the square
-        assertEquals(square.GetPointOne().GetX(), 1.0)
-        assertEquals(square.GetPointOne().GetY(), 2.0)
-        assertEquals(pointTwo.GetX(), 2.0)
-        assertEquals(pointTwo.GetY(), 0.0)
+        assertEquals(1.0, square.GetPointOne().GetX())
+        assertEquals(2.0, square.GetPointOne().GetY())
 
-        // Test the area of the square
-        val squareArea = square.GetArea()
-        val expectedArea = Math.abs((pointTwo.GetX() - pointOne.GetX()) * (pointTwo.GetY() - pointOne.GetY()))
-        assertEquals(expectedArea, squareArea)
+        assertEquals(3.0, square.GetSideLength())
+        assertEquals(9.0, square.GetArea())
 
-        // Test the MoveSquare method
-        square.MoveSquare(1.0, 1.0);
-        assertEquals(pointOne.GetX(),2.0)
-        assertEquals(pointOne.GetY(),3.0)
-        assertEquals(pointTwo.GetX(),3.0)
-        assertEquals(pointTwo.GetY(),1.0)
+        square.MoveSquare(1.0, 1.0)
+
+        assertEquals(2.0, square.GetPointOne().GetX())
+        assertEquals(3.0, square.GetPointOne().GetY())
+    }
+
+    // Square Class Tests Rejected Inputs
+
+    @Test
+    fun `Square with zero or negative side length throws exception`() {
+        val zeroException = assertFailsWith<IllegalArgumentException> {
+         Square(Point(1.0, 2.0), 0.0)
+        }
+
+        assertEquals(
+         "Square side length must be greater than 0",
+            zeroException.message
+        )
+
+        val negativeException = assertFailsWith<IllegalArgumentException> {
+            Square(Point(1.0, 2.0), -3.0)
+        }
+
+        assertEquals(
+            "Square side length must be greater than 0",
+            negativeException.message
+        )
     }
 
     // Triangle Class Tests
@@ -200,27 +216,28 @@ class ShapeTest {
         val radius = 3.0
         val circle = Circle(middlePoint, radius)
 
-        // Test the middle point and radius of the circle
-        assertEquals(middlePoint, circle.GetMiddlePoint())
-        assertEquals(radius, circle.GetRadiusOne())
-        assertEquals(radius, circle.GetRadiusTwo())
+        // Test the center point and radius
+        assertEquals(1.0, circle.GetCenterPoint().GetX())
+        assertEquals(2.0, circle.GetCenterPoint().GetY())
+        assertEquals(radius, circle.GetRadius())
 
-        // Test the area of the circle
-        val circleArea = circle.GetArea()
+        // Test the area
         val expectedArea = Math.PI * radius * radius
-        assertEquals(expectedArea, circleArea)
+        assertEquals(expectedArea, circle.GetArea())
 
         // Test the MoveCircle method
-        circle.MoveCircle(1.0, 1.0);
-        assertEquals(middlePoint.GetX(),2.0)
-        assertEquals(middlePoint.GetY(),3.0)
+        circle.MoveCircle(1.0, 1.0)
+
+        assertEquals(2.0, circle.GetCenterPoint().GetX())
+        assertEquals(3.0, circle.GetCenterPoint().GetY())
     }
 
     // Circle Class Tests Rejected Inputs
+
     @Test
     fun `Circle with negative or zero radius throws exception`() {
         val exception = assertFailsWith<IllegalArgumentException> {
-            Circle(Point(1.0, 2.0), -3.0)
+         Circle(Point(1.0, 2.0), -3.0)
         }
 
         assertEquals(
@@ -229,10 +246,7 @@ class ShapeTest {
         )
 
         val exception2 = assertFailsWith<IllegalArgumentException> {
-            Circle(
-                Point(1.0, 2.0),
-                0.0
-            )
+            Circle(Point(1.0, 2.0), 0.0)
         }
 
         assertEquals(

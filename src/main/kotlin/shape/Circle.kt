@@ -13,15 +13,11 @@ class Circle(
         }
     }
 
-    fun GetMiddlePoint(): Point {
+    fun GetCenterPoint(): Point {
         return middlePoint
     }
 
-    fun GetRadiusOne(): Double {
-        return radius
-    }
-
-    fun GetRadiusTwo(): Double {
+    fun GetRadius(): Double {
         return radius
     }
 
