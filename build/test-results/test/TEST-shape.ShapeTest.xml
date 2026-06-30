@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shape.ShapeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-06-30T01:42:24.464Z" hostname="DESKTOP-F5QOEFV" time="0.072">
+<testsuite name="shape.ShapeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-06-30T02:03:44.597Z" hostname="DESKTOP-F5QOEFV" time="0.057">
   <properties/>
-  <testcase name="Test Point Class Methods()" classname="shape.ShapeTest" time="0.029"/>
-  <testcase name="Test Line Class Methods()" classname="shape.ShapeTest" time="0.002"/>
+  <testcase name="Test Point Class Methods()" classname="shape.ShapeTest" time="0.02"/>
+  <testcase name="Test Line Class Methods()" classname="shape.ShapeTest" time="0.001"/>
   <testcase name="Test Triangle Class Methods()" classname="shape.ShapeTest" time="0.001"/>
-  <testcase name="Triangle with zero area throws exception()" classname="shape.ShapeTest" time="0.024"/>
+  <testcase name="Triangle with zero area throws exception()" classname="shape.ShapeTest" time="0.025"/>
   <testcase name="Test Line Class Rejected Inputs()" classname="shape.ShapeTest" time="0.001"/>
   <testcase name="Test Square Class Methods()" classname="shape.ShapeTest" time="0.001"/>
   <testcase name="Rectangle with zero area throws exception()" classname="shape.ShapeTest" time="0.001"/>
   <testcase name="Test Ellipse Class Methods()" classname="shape.ShapeTest" time="0.001"/>
   <testcase name="Test Circle Class Methods()" classname="shape.ShapeTest" time="0.001"/>
-  <testcase name="Test Rectangle Class Methods()" classname="shape.ShapeTest" time="0.001"/>
+  <testcase name="Test Rectangle Class Methods()" classname="shape.ShapeTest" time="0.0"/>
   <testcase name="Circle with negative or zero radius throws exception()" classname="shape.ShapeTest" time="0.0"/>
-  <testcase name="Ellipse with negative or zero radii throws exception()" classname="shape.ShapeTest" time="0.0"/>
+  <testcase name="Ellipse with negative or zero radii throws exception()" classname="shape.ShapeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
